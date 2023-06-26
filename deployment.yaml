@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentiment-webapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sentiment-webapp
+  template:
+    metadata:
+      labels:
+        app: sentiment-webapp
+    spec:
+      containers:
+      - name: sentiment-webapp
+        image: cyrillknecht/sentiment-classification:sentiment-classification-webapp
+        ports:
+        - containerPort: 4040

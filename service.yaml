@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sentiment-webapp-service
+spec:
+  selector:
+    app: sentiment-webapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4040
+  type: LoadBalancer
