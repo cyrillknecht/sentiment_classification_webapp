@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Sentiment Classification</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Sentiment Classification Webapp</h1>
+
+            <form method="POST" action="/">
+                <input type="text" name="sentence" placeholder="Enter a sentence" required>
+                <input type="submit" value="Classify">
+            </form>
+
+            {% if sentence %}
+                <div class="result">
+                    <h2>Result:</h2>
+                    <p><strong>Sentence:</strong> {{ sentence }}</p>
+                    <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+                    <p><strong>Confidence:</strong> {{ confidence }}</p>
+                </div>
+            {% endif %}
+
+            <footer>
+                <div class="about">
+                    <h3>About</h3>
+                    <p>
+                        This webapp was made with Flask and deployed on Google Cloud using GKE.
+                        It classifies sentences as positive or negative using the
+                        distilbert-base-uncased-finetuned-sst-2-english model from huggingface.
+                    </p>
+                </div>
+                <div class="github-icon">
+                    <a href="https://github.com/cyrillknecht/sentiment_classification_webapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-github" style="font-size:36px;"></i>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
