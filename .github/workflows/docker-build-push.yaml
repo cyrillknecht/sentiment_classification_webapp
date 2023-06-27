@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: ambient-hulling-391111
-  IMAGE_NAME: gcr.io/${{ PROJECT_ID }}/sentiment-classification
+  IMAGE_NAME: gcr.io/ambient-hulling-391111/sentiment-classification
 
 jobs:
   build-and-push:
