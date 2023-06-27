@@ -1,5 +1,11 @@
 # Sentiment Classification Web App
 
+A web app that classifies the sentiment of a given text.
+Access the app at http://http://34.118.124.220/.
+Hosted on Google Cloud Platform.
+Using docker and kubernetes.
+Docker image hosted on Docker Hub.
+
 ## Run the app locally with docker
 
 ```bash
