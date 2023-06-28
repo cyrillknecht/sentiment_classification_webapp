@@ -1,4 +1,4 @@
-![App UI](static/assets/webapp_ui.png)
+![App UI](/static/assets/webapp_ui.png)
 **A web app that classifies the sentiment of a given text snippet as positive or negative.
 Access the running app by clicking the icon below.**
 
