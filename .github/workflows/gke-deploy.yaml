@@ -9,7 +9,7 @@ on:
 env:
   PROJECT_ID: ambient-hulling-391111
   CLUSTER_NAME: autopilot-cluster-1
-  ZONE: your-zone
+  ZONE: europe-central2
   IMAGE: cyrillknecht/sentiment-classification
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -38,13 +38,9 @@ jobs:
         username: ${{ env.DOCKER_USERNAME }}
         password: ${{ env.DOCKER_PASSWORD }}
 
-    - name: Configure Docker
-      run: |
-        docker pull ${{ env.IMAGE }}
-
     - name: Set up kubectl
       run: |
-        gcloud container clusters get-credentials ${{ env.CLUSTER_NAME }} 
+        gcloud container clusters get-credentials ${{ env.CLUSTER_NAME }}  --zone ${{ env.ZONE }}
 
     - name: Delete previous deployment
       run: |
