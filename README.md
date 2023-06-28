@@ -1,21 +1,35 @@
-# Sentiment Classification Web App
+![App UI](static/assets/webapp_ui.png)
+**A web app that classifies the sentiment of a given text snippet as positive or negative.
+Access the running app by clicking the icon below.**
 
-A web app that classifies the sentiment of a given text.
-Access the app at http://34.118.124.220/.
-Hosted on Google Cloud Platform.
-Using docker and kubernetes.
-Docker image hosted on Docker Hub.
 
-## Run the app locally with docker
+[<img src="static/assets/favicon.ico" alt="Icon" width="60" height="60">](http://34.118.124.220/)
+
+
+
+## The App
+The Sentiment Classification Webapp is a simple Flask Webapp using a pre-trained
+Sentiment Classification Model to classify the sentiment of a given text snippet as positive or negative.
+The goal of this project was not to create a state-of-the-art sentiment classification model,
+but rather to create a simple web app using **Docker** and **Kubernetes** to get familiar with these technologies.
+The app was then hosted on **Google Cloud** using **Google Kubernetes Engine** which also allowed me to get familiar
+with these cloud technologies. I am completely aware that this is probably not the most efficient way to
+deploy such a simple web app,
+
+
+## Development
+Instructions for running the app locally.
+
+### Run the app locally with docker
 
 ```bash
     docker build -t sentiment-classification-web-app .
     docker run -p 4040:4040 sentiment-classification-web-app
 ```
 
-## Run the app locally with kubernetes
+### Run the app locally with kubernetes
 
-### Run the app
+#### Run the app
 Run the following commands to deploy the app to a local kubernetes cluster.
 ```bash
     kubectl apply -f deployment.yaml
@@ -36,7 +50,7 @@ Once the service is ready, run the following command to forward the service to l
 
 Access the app at http://localhost:8080.
 
-### Delete the app
+#### Delete the app
 Run the following commands to delete the app from the local kubernetes cluster.
 ```bash
     kubectl delete -f deployment.yaml
