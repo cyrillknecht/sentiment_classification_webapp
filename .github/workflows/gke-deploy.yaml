@@ -1,9 +1,6 @@
 name: GKE Deployment
 
-on:
-  push:
-    branches:
-      - master
+on: workflow_dispatch
 
 env:
   PROJECT_ID: ambient-hulling-391111
