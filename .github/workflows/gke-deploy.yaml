@@ -1,10 +1,13 @@
 name: GKE Deployment
 
 on:
-  workflow_run:
-    workflows: ["Docker Build and Push"]
-    types:
-      - completed
+  push:
+    branches:
+      - master
+#  workflow_run:
+#    workflows: ["Docker Build and Push"]
+#    types:
+#      - completed
 
 env:
   PROJECT_ID: ambient-hulling-391111
@@ -40,6 +43,7 @@ jobs:
 
     - name: Set up kubectl
       run: |
+        gcloud components install gke-gcloud-auth-plugin
         gcloud container clusters get-credentials ${{ env.CLUSTER_NAME }}  --zone ${{ env.ZONE }}
 
     - name: Delete previous deployment
