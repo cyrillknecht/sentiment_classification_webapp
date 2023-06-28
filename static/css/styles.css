@@ -5,11 +5,25 @@ body {
     background-color: #f9f9f9;
 }
 
+@keyframes fadeOutAnimation {
+            to { background-color: #f9f9f9; }
+        }
+
+body.sentiment-negative {
+    background-color: #ec2f2f;
+    animation: fadeOutAnimation 10s forwards;
+}
+
+body.sentiment-positive {
+    background-color: green;
+    animation: fadeOutAnimation 10s forwards;
+}
+
 .container {
     max-width: 800px;
-    padding: 40px;
+    padding: 20px;
     text-align: center;
-    margin: 100px auto 0;
+    margin: 5px auto 0;
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -30,9 +44,8 @@ body {
 }
 
 h1 {
-    margin: 0;
     font-size: 36px;
-    margin-bottom: 40px;
+    margin: 0 0 40px;
 }
 
 @keyframes scaleIn {
@@ -107,7 +120,7 @@ input[type="submit"]:hover {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 40px;
-    text-align: left;
+    text-align: center;
 }
 
 h2 {
@@ -140,15 +153,15 @@ p {
 
 .github-icon {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
     z-index: 999;
 }
 
 .github-icon a {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-color: #000;
     border-radius: 50%;
     text-align: center;
@@ -161,3 +174,11 @@ p {
 .github-icon a:hover {
     transform: scale(1.2);
 }
+
+
+
+
+
+
+
+

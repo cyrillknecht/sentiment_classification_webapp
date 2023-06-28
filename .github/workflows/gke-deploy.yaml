@@ -1,6 +1,11 @@
 name: GKE Deployment
 
-on: workflow_dispatch
+on:
+  workflow_run:
+      workflows: ["Docker Build and Push"]
+      types:
+      - completed
+
 
 env:
   PROJECT_ID: ambient-hulling-391111
@@ -14,7 +19,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    #if: github.event.workflow_run.conclusion == 'success'
+    if: github.event.workflow_run.conclusion == 'success'
 
     steps:
     - name: Checkout repository

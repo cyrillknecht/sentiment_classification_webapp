@@ -6,21 +6,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='shortcut icon' type='image/x-icon' href='../static/assets/favicon.ico'>
 </head>
-<body>
+<body {% if sentiment == "POSITIVE" %}class="sentiment-positive"
+      {% elif sentiment == "NEGATIVE" %}class="sentiment-negative"
+      {% endif %}>
     <div class="container">
         <div class="content">
             <h1>Sentiment Classification Webapp</h1>
 
             <form method="POST" action="/">
-                <input type="text" name="sentence" placeholder="Enter a sentence" required>
+                <label>
+                    <input type="text" name="sentence" placeholder="Enter a sentence" required>
+                </label>
                 <input type="submit" value="Classify">
             </form>
 
             {% if sentence %}
                 <div class="result">
                     <h2>Result:</h2>
-                    <p><strong>Sentence:</strong> {{ sentence }}</p>
-                    <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+                    <p><strong>Classified Sentence:</strong> {{ sentence }}</p>
+                    <p><strong>Predicted Sentiment:</strong> {{ sentiment }}</p>
                     <p><strong>Confidence:</strong> {{ confidence }}</p>
                 </div>
             {% endif %}
@@ -29,14 +33,17 @@
                 <div class="about">
                     <h3>About</h3>
                     <p>
-                        This webapp was made with Flask and deployed on Google Cloud using GKE.
-                        It classifies sentences as positive or negative using the
-                        distilbert-base-uncased-finetuned-sst-2-english model from huggingface.
+                        This webapp was made with <a href="https://flask.palletsprojects.com/en/2.3.x/">Flask</a>
+                        and deployed on <a href="https://cloud.google.com/">Google Cloud</a>
+                        using <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine (GKE)</a>.
+                        It classifies the sentiment of input sentences as POSITIVE or NEGATIVE using the
+                        <a href="https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english">distilbert-base-uncased-finetuned-sst-2-english</a>
+                        model provided by <a href="https://huggingface.co/">Huggingface</a>.
                     </p>
                 </div>
                 <div class="github-icon">
                     <a href="https://github.com/cyrillknecht/sentiment_classification_webapp" target="_blank" rel="noopener noreferrer">
-                        <i class="fa fa-github" style="font-size:36px;"></i>
+                        <i class="fa fa-github" style="font-size:56px;"></i>
                     </a>
                 </div>
             </footer>

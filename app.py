@@ -15,7 +15,7 @@ def home():
         # Classify sentiment
         result = nlp(sentence)[0]
         label = result["label"]
-        score = result["score"]
+        score = round(result["score"], 2)
 
         return render_template('index.html', sentence=sentence, sentiment=label, confidence=score)
 
