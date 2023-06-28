@@ -1,4 +1,9 @@
 ![App UI](/static/assets/webapp_ui.png)
+
+
+[![Build Docker Image and Push to Docker Hub](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/docker-build-push.yaml/badge.svg)](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/docker-build-push.yaml)
+[![Google Kubernetes Engine Deployment](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/gke-deploy.yaml/badge.svg)](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/gke-deploy.yaml)
+
 **A web app that classifies the sentiment of a given text snippet as positive or negative.
 Access the running app by clicking the icon below.**
 
