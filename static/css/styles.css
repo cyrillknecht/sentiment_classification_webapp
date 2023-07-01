@@ -85,8 +85,9 @@ input[type="text"] {
     margin-bottom: 20px;
 }
 
+/*change the color of the input field when the user hovers over it*/
 input[type="text"]:hover {
-    transform: scale(1.05);
+    border-color: #000;
 }
 
 @keyframes slideIn {
@@ -112,8 +113,9 @@ input[type="submit"] {
     transition: transform 0.3s ease-in-out;
 }
 
+
 input[type="submit"]:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .result {
@@ -172,7 +174,7 @@ p {
 }
 
 .github-icon a:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 
