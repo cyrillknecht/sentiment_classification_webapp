@@ -115,7 +115,7 @@ input[type="submit"] {
 
 
 input[type="submit"]:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .result {
@@ -174,7 +174,7 @@ p {
 }
 
 .github-icon a:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 
