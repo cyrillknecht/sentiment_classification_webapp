@@ -46,7 +46,7 @@ jobs:
 
     - name: Delete previous deployment
       run: |
-        kubectl delete deployment  sentiment-webapp-deployment
+        kubectl delete deployment sentiment-webapp-deployment --ignore-not-found
 
     - name: Create new deployment
       run: |
