@@ -4,8 +4,9 @@
 [![Build Docker Image and Push to Docker Hub](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/docker-build-push.yaml/badge.svg)](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/docker-build-push.yaml)
 [![Google Kubernetes Engine Deployment](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/gke-deploy.yaml/badge.svg)](https://github.com/cyrillknecht/sentiment_classification_webapp/actions/workflows/gke-deploy.yaml)
 
-**A web app that classifies the sentiment of a given text snippet as positive or negative.
-Access the running app by clicking the icon below.**
+**A simple web app that classifies the sentiment of a given text snippet as positive or negative.
+Access the running app by clicking the icon below.
+(Can be offline due to cluster maintenance)**
 
 
 [<img src="static/assets/favicon.ico" alt="Icon" width="60" height="60">](http://34.118.124.220/)
