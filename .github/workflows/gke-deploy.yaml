@@ -6,7 +6,6 @@ on:
       types:
       - completed
 
-
 env:
   PROJECT_ID: ambient-hulling-391111
   CLUSTER_NAME: autopilot-cluster-1
@@ -42,7 +41,7 @@ jobs:
     - name: Set up kubectl
       run: |
         gcloud components install gke-gcloud-auth-plugin
-        gcloud container clusters get-credentials ${{ env.CLUSTER_NAME }}  --zone ${{ env.ZONE }}
+        gcloud container clusters get-credentials ${{ env.CLUSTER_NAME }} --zone ${{ env.ZONE }}
 
     - name: Delete previous deployment
       run: |
@@ -50,4 +49,12 @@ jobs:
 
     - name: Create new deployment
       run: |
-        kubectl create deployment  sentiment-webapp-deployment --image=${{ env.IMAGE }}
+        kubectl create deployment sentiment-webapp-deployment --image=${{ env.IMAGE }}
+
+    - name: Delete previous service
+      run: |
+        kubectl delete service sentiment-webapp-service --ignore-not-found
+
+    - name: Create new service
+      run: |
+        kubectl expose deployment sentiment-webapp-deployment --type=LoadBalancer --name=sentiment-webapp-service --port=80 --target-port=80
