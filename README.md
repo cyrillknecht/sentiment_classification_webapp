@@ -9,7 +9,7 @@ Access the running app by clicking the icon below.
 (Can be offline due to cluster maintenance)**
 
 
-[<img src="static/assets/favicon.ico" alt="Icon" width="60" height="60">](http://34.118.124.220/)
+[<img src="static/assets/favicon.ico" alt="Icon" width="60" height="60">](http://34.0.244.44)
 
 
 
