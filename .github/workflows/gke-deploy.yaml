@@ -57,4 +57,4 @@ jobs:
 
     - name: Create new service
       run: |
-        kubectl expose deployment sentiment-webapp-deployment --type=LoadBalancer --name=sentiment-webapp-service --port=80 --target-port=80
+        kubectl expose deployment sentiment-webapp-deployment --type=LoadBalancer --name=sentiment-webapp-service --port=80 --target-port=4040
