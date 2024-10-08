@@ -50,11 +50,3 @@ jobs:
     - name: Create new deployment
       run: |
         kubectl create deployment sentiment-webapp-deployment --image=${{ env.IMAGE }}
-
-    - name: Delete previous service
-      run: |
-        kubectl delete service sentiment-webapp-service --ignore-not-found
-
-    - name: Create new service
-      run: |
-        kubectl expose deployment sentiment-webapp-deployment --type=LoadBalancer --name=sentiment-webapp-service --port=80 --target-port=4040
